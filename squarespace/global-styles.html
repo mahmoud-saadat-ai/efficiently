@@ -1,0 +1,445 @@
+<!-- 
+  EFFICIENTLY — Global Styles & Scripts
+  ======================================
+  WHERE TO PASTE: Squarespace → Settings → Advanced → Code Injection → HEADER
+  
+  This injects site-wide CSS custom properties, reusable component styles,
+  responsive breakpoints, and a lightweight scroll-animation script.
+  All classes are prefixed with .eff- to avoid Squarespace conflicts.
+-->
+
+<style>
+/* ============================================
+   EFFICIENTLY — GLOBAL DESIGN SYSTEM
+   ============================================ */
+
+/* --- Custom Properties --- */
+:root {
+  --eff-bg-primary: #0a0a0a;
+  --eff-bg-secondary: #111111;
+  --eff-bg-card: #161616;
+  --eff-bg-card-hover: #1c1c1c;
+  --eff-border-color: #222222;
+  --eff-border-subtle: #1a1a1a;
+
+  --eff-text-primary: #f0f0f0;
+  --eff-text-secondary: #a0a0a0;
+  --eff-text-muted: #666666;
+
+  --eff-accent: #c8ff00;
+  --eff-accent-dim: rgba(200, 255, 0, 0.15);
+  --eff-accent-glow: rgba(200, 255, 0, 0.08);
+
+  --eff-white: #ffffff;
+  --eff-black: #000000;
+
+  --eff-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --eff-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+  --eff-space-xs: 0.5rem;
+  --eff-space-sm: 1rem;
+  --eff-space-md: 1.5rem;
+  --eff-space-lg: 2.5rem;
+  --eff-space-xl: 4rem;
+  --eff-space-2xl: 6rem;
+  --eff-space-3xl: 8rem;
+
+  --eff-radius-sm: 6px;
+  --eff-radius-md: 12px;
+  --eff-radius-lg: 20px;
+  --eff-radius-full: 9999px;
+
+  --eff-max-width: 1200px;
+  --eff-max-width-narrow: 800px;
+
+  --eff-transition-fast: 0.2s ease;
+  --eff-transition-base: 0.35s ease;
+  --eff-transition-slow: 0.6s ease;
+}
+
+/* --- Reset for Efficiently Sections --- */
+.eff-page *,
+.eff-page *::before,
+.eff-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.eff-page {
+  font-family: var(--eff-font-primary);
+  color: var(--eff-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+.eff-h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--eff-white);
+}
+
+.eff-h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--eff-white);
+}
+
+.eff-h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--eff-white);
+}
+
+.eff-h4 {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--eff-white);
+}
+
+.eff-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--eff-text-secondary);
+}
+
+.eff-body-lg {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--eff-text-secondary);
+}
+
+.eff-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--eff-accent);
+}
+
+.eff-mono {
+  font-family: var(--eff-font-mono);
+  font-size: 0.9em;
+}
+
+/* --- Layout --- */
+.eff-section {
+  padding: var(--eff-space-3xl) var(--eff-space-md);
+  position: relative;
+}
+
+.eff-section--compact {
+  padding: var(--eff-space-xl) var(--eff-space-md);
+}
+
+.eff-container {
+  max-width: var(--eff-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eff-container--narrow {
+  max-width: var(--eff-max-width-narrow);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eff-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--eff-space-lg);
+}
+
+.eff-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--eff-space-lg);
+}
+
+.eff-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eff-text-center {
+  text-align: center;
+}
+
+/* --- Cards --- */
+.eff-card {
+  background: var(--eff-bg-card);
+  border: 1px solid var(--eff-border-color);
+  border-radius: var(--eff-radius-md);
+  padding: var(--eff-space-lg);
+  transition: all var(--eff-transition-base);
+}
+
+.eff-card:hover {
+  background: var(--eff-bg-card-hover);
+  border-color: var(--eff-accent);
+  transform: translateY(-2px);
+}
+
+.eff-card--no-hover:hover {
+  transform: none;
+  border-color: var(--eff-border-color);
+  background: var(--eff-bg-card);
+}
+
+/* --- Buttons / CTAs --- */
+.eff-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--eff-radius-full);
+  font-family: var(--eff-font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all var(--eff-transition-base);
+}
+
+.eff-btn--primary {
+  background: var(--eff-accent);
+  color: var(--eff-black);
+}
+
+.eff-btn--primary:hover {
+  background: var(--eff-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(200, 255, 0, 0.3);
+}
+
+.eff-btn--outline {
+  background: transparent;
+  color: var(--eff-text-primary);
+  border: 1px solid var(--eff-border-color);
+}
+
+.eff-btn--outline:hover {
+  border-color: var(--eff-accent);
+  color: var(--eff-accent);
+}
+
+.eff-btn--ghost {
+  background: transparent;
+  color: var(--eff-accent);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.eff-btn--ghost:hover {
+  border-bottom-color: var(--eff-accent);
+}
+
+/* --- Pills / Tags --- */
+.eff-pill {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--eff-radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--eff-accent-dim);
+  color: var(--eff-accent);
+  border: 1px solid rgba(200, 255, 0, 0.2);
+}
+
+.eff-pill--muted {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--eff-text-secondary);
+  border-color: var(--eff-border-color);
+}
+
+/* --- Dividers --- */
+.eff-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--eff-accent);
+  border: none;
+  margin: var(--eff-space-md) 0;
+}
+
+.eff-divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eff-divider--wide {
+  width: 100%;
+  height: 1px;
+  background: var(--eff-border-color);
+}
+
+/* --- Outcome Callout --- */
+.eff-outcome {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--eff-space-sm);
+  padding: 0.75rem 1rem;
+  background: var(--eff-accent-glow);
+  border-left: 3px solid var(--eff-accent);
+  border-radius: 0 var(--eff-radius-sm) var(--eff-radius-sm) 0;
+  font-weight: 600;
+  color: var(--eff-accent);
+  font-size: 0.95rem;
+}
+
+/* --- Number Badge --- */
+.eff-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--eff-radius-full);
+  background: var(--eff-accent);
+  color: var(--eff-black);
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* --- Bullet List --- */
+.eff-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--eff-space-sm) 0;
+}
+
+.eff-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
+  color: var(--eff-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.eff-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--eff-accent);
+}
+
+/* --- Spacers --- */
+.eff-spacer-sm { height: var(--eff-space-sm); }
+.eff-spacer-md { height: var(--eff-space-md); }
+.eff-spacer-lg { height: var(--eff-space-lg); }
+.eff-spacer-xl { height: var(--eff-space-xl); }
+
+/* --- Scroll Animation --- */
+.eff-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.eff-fade-up.eff-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eff-fade-up.eff-delay-1 { transition-delay: 0.1s; }
+.eff-fade-up.eff-delay-2 { transition-delay: 0.2s; }
+.eff-fade-up.eff-delay-3 { transition-delay: 0.3s; }
+.eff-fade-up.eff-delay-4 { transition-delay: 0.4s; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .eff-grid-2,
+  .eff-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .eff-section {
+    padding: var(--eff-space-xl) var(--eff-space-sm);
+  }
+
+  .eff-h1 {
+    font-size: 2.2rem;
+  }
+
+  .eff-h2 {
+    font-size: 1.6rem;
+  }
+
+  .eff-card {
+    padding: var(--eff-space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .eff-section {
+    padding: var(--eff-space-lg) 1rem;
+  }
+
+  .eff-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<script>
+/* Efficiently — Scroll Reveal Animation */
+(function() {
+  'use strict';
+  
+  function initEffReveal() {
+    var elements = document.querySelectorAll('.eff-fade-up');
+    if (!elements.length) return;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('eff-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      elements.forEach(function(el) {
+        observer.observe(el);
+      });
+    } else {
+      /* Fallback: show all elements immediately */
+      elements.forEach(function(el) {
+        el.classList.add('eff-visible');
+      });
+    }
+  }
+
+  /* Run on DOM ready and also after Squarespace's AJAX page loads */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEffReveal);
+  } else {
+    initEffReveal();
+  }
+
+  /* Squarespace AJAX navigation support */
+  window.addEventListener('mercury:load', initEffReveal);
+})();
+</script>

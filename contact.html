@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Efficiently</title>
+  <meta name="description" content="Get in touch with Efficiently. Whether you're building Physical AI, exploring a partnership, or seeking strategic advisory — let's talk.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Let's Talk — Efficiently">
+  <meta property="og:description" content="Whether you're a founder building Physical AI or exploring a partnership — we'd love to hear from you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://efficiently.world/contact">
+  <meta property="og:site_name" content="Efficiently">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Let's Talk — Efficiently">
+  <meta name="twitter:description" content="Whether you're a founder building Physical AI or exploring a partnership — we'd love to hear from you.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="eff-nav">
+    <div class="eff-nav__inner">
+      <a href="index.html" class="eff-nav__logo">Efficiently</a>
+      <button class="eff-nav__toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="eff-nav__links">
+        <li><a href="index.html" class="eff-nav__link">Home</a></li>
+        <li><a href="thesis.html" class="eff-nav__link">Thesis</a></li>
+        <li><a href="services.html" class="eff-nav__link">Services</a></li>
+        <li><a href="contact.html" class="eff-nav__cta">Let's Talk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="eff-section" style="padding-top: calc(var(--eff-nav-height) + 4rem); padding-bottom: var(--eff-space-lg);">
+    <div class="eff-container--narrow eff-text-center">
+      <p class="eff-label eff-fade-up" style="margin-bottom: var(--eff-space-md);">Get In Touch</p>
+      <h1 class="eff-h1 eff-fade-up eff-delay-1">Let's Talk</h1>
+      <div class="eff-spacer-md"></div>
+      <p class="eff-body-lg eff-fade-up eff-delay-2" style="max-width: 560px; margin: 0 auto;">
+        Whether you're a founder building Physical AI, exploring a partnership, or looking for strategic advisory — we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM + INFO ===== -->
+  <section class="eff-section--compact" style="padding-top: 0;">
+    <div class="eff-container">
+      <div class="eff-grid-2" style="align-items: start;">
+
+        <!-- Contact Form -->
+        <div class="eff-card eff-card--no-hover eff-card--accent-top eff-fade-up eff-delay-1">
+          <h3 class="eff-h3" style="margin-bottom: var(--eff-space-md);">Send a Message</h3>
+
+          <form id="eff-contact-form" class="eff-form">
+            <div>
+              <label for="eff-name" class="eff-form__label">Name</label>
+              <input type="text" id="eff-name" name="name" required class="eff-form__input" placeholder="Your name">
+            </div>
+
+            <div>
+              <label for="eff-email" class="eff-form__label">Email</label>
+              <input type="email" id="eff-email" name="email" required class="eff-form__input" placeholder="you@company.com">
+            </div>
+
+            <div>
+              <label for="eff-company" class="eff-form__label">Company <span class="eff-muted-text" style="font-weight: 400;">(optional)</span></label>
+              <input type="text" id="eff-company" name="company" class="eff-form__input" placeholder="Company name">
+            </div>
+
+            <div>
+              <label for="eff-interest" class="eff-form__label">I'm interested in</label>
+              <select id="eff-interest" name="interest" class="eff-form__select">
+                <option value="" disabled selected>Select an option</option>
+                <option value="advisory">Advisory engagement</option>
+                <option value="investment">Investment opportunity</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="eff-message" class="eff-form__label">Message</label>
+              <textarea id="eff-message" name="message" rows="5" required class="eff-form__textarea" placeholder="Tell us about what you're building..."></textarea>
+            </div>
+
+            <div class="eff-spacer-sm"></div>
+            <button type="submit" class="eff-btn eff-btn--primary" style="width: 100%; justify-content: center;">
+              Send Message →
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="eff-fade-up eff-delay-2">
+
+          <!-- Direct Contact -->
+          <div class="eff-card eff-card--no-hover" style="margin-bottom: var(--eff-space-md);">
+            <h4 class="eff-h4" style="margin-bottom: var(--eff-space-md);">Direct Contact</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="eff-contact-field">
+                <p class="eff-contact-label">Email</p>
+                <a href="mailto:hello@efficiently.world" class="eff-contact-value">hello@efficiently.world</a>
+              </div>
+              <div class="eff-contact-field">
+                <p class="eff-contact-label">LinkedIn</p>
+                <a href="https://linkedin.com/company/efficiently" target="_blank" rel="noopener noreferrer" class="eff-contact-value">linkedin.com/company/efficiently</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- What to expect -->
+          <div class="eff-card eff-card--no-hover">
+            <h4 class="eff-h4" style="margin-bottom: var(--eff-space-md);">What to Expect</h4>
+            <ul class="eff-list">
+              <li>We respond within 48 hours</li>
+              <li>No pitch deck required — just tell us what's hard</li>
+              <li>First conversation is always exploratory, no commitments</li>
+              <li>We're technical-first — expect real questions, not buzzwords</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="eff-section eff-section--alt">
+    <div class="eff-container--narrow eff-text-center">
+      <div class="eff-fade-up">
+        <p class="eff-label" style="margin-bottom: var(--eff-space-md);">Stay Updated</p>
+        <h2 class="eff-h2">Join the Newsletter</h2>
+        <div class="eff-spacer-sm"></div>
+        <p class="eff-body-lg" style="max-width: 500px; margin: 0 auto;">
+          The latest on sensing technologies, robotics, and artificial intelligence — curated for builders.
+        </p>
+        <div class="eff-spacer-lg"></div>
+
+        <form class="eff-form eff-form--inline">
+          <input type="email" name="email" required class="eff-form__input" placeholder="your@email.com">
+          <button type="submit" class="eff-btn eff-btn--primary">Subscribe</button>
+        </form>
+
+        <p class="eff-muted-text" style="font-size: 0.8rem; margin-top: var(--eff-space-sm);">
+          No spam. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="eff-footer">
+    <div class="eff-footer__inner">
+      <div class="eff-footer__brand">
+        <div class="eff-footer__brand-name">Efficiently</div>
+        <p class="eff-footer__brand-desc">Investing &amp; advising for companies building AI systems that sense, decide, and act in the real world.</p>
+      </div>
+      <div class="eff-footer__nav">
+        <div>
+          <div class="eff-footer__col-title">Pages</div>
+          <ul class="eff-footer__col-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="thesis.html">Thesis</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="eff-footer__col-title">Connect</div>
+          <ul class="eff-footer__col-links">
+            <li><a href="mailto:hello@efficiently.world">Email</a></li>
+            <li><a href="https://linkedin.com/company/efficiently" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="eff-footer__bottom">
+      <p class="eff-footer__copy">&copy; 2026 Efficiently. All rights reserved.</p>
+      <p class="eff-footer__tagline">Where AI meets physics — efficiently.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -16,14 +16,14 @@
   --eff-text-secondary: #a0a0a0;
   --eff-text-muted: #666666;
 
-  --eff-accent: #c8ff00;
-  --eff-accent-dim: rgba(200, 255, 0, 0.15);
-  --eff-accent-glow: rgba(200, 255, 0, 0.08);
+  --eff-accent: #00a693;
+  --eff-accent-dim: rgba(0, 166, 147, 0.15);
+  --eff-accent-glow: rgba(0, 166, 147, 0.08);
 
   --eff-white: #ffffff;
   --eff-black: #000000;
 
-  --eff-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --eff-font-primary: 'Blinker', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --eff-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
   --eff-space-xs: 0.5rem;
@@ -114,15 +114,19 @@ img {
 }
 
 .eff-nav__logo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--eff-white);
-  letter-spacing: -0.02em;
-  transition: color var(--eff-transition-fast);
+  display: inline-flex;
+  align-items: center;
+  transition: opacity var(--eff-transition-fast);
 }
 
 .eff-nav__logo:hover {
-  color: var(--eff-accent);
+  opacity: 0.9;
+}
+
+.eff-nav__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
 .eff-nav__links {
@@ -174,7 +178,7 @@ img {
 .eff-nav__cta:hover {
   background: var(--eff-white);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(200, 255, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 166, 147, 0.25);
 }
 
 /* Mobile hamburger */
@@ -245,6 +249,10 @@ img {
   .eff-nav__cta {
     font-size: 1.1rem;
     padding: 0.75rem 2rem;
+  }
+
+  .eff-nav__logo-img {
+    height: 32px;
   }
 }
 
@@ -427,7 +435,7 @@ img {
 .eff-btn--primary:hover {
   background: var(--eff-white);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(200, 255, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 166, 147, 0.3);
 }
 
 .eff-btn--outline {
@@ -474,7 +482,7 @@ img {
   font-weight: 500;
   background: var(--eff-accent-dim);
   color: var(--eff-accent);
-  border: 1px solid rgba(200, 255, 0, 0.2);
+  border: 1px solid rgba(0, 166, 147, 0.25);
 }
 
 .eff-pill--muted {
@@ -699,10 +707,14 @@ img {
 }
 
 .eff-footer__brand-name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--eff-white);
   margin-bottom: 0.75rem;
+}
+
+.eff-footer__logo {
+  height: 42px;
+  width: auto;
+  display: block;
+  border-radius: 2px;
 }
 
 .eff-footer__brand-desc {

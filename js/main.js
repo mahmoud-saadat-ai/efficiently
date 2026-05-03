@@ -94,8 +94,9 @@
   function initContactForm() {
     var form = document.getElementById('eff-contact-form');
     if (!form) return;
+    var status = document.getElementById('eff-form-status');
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       var name = form.querySelector('[name="name"]').value;
@@ -104,25 +105,58 @@
       var interest = form.querySelector('[name="interest"]').value || 'Not specified';
       var message = form.querySelector('[name="message"]').value;
 
-      var subject = encodeURIComponent('Efficiently — Inquiry from ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Company: ' + company + '\n' +
-        'Interest: ' + interest + '\n\n' +
-        'Message:\n' + message
-      );
-
-      window.location.href = 'mailto:hello@efficiently.world?subject=' + subject + '&body=' + body;
+      var subject = 'Efficiently - Inquiry from ' + name;
 
       var btn = form.querySelector('button[type="submit"]');
       var originalText = btn.textContent;
-      btn.textContent = 'Opening email client...';
+      btn.textContent = 'Sending...';
       btn.style.opacity = '0.7';
+      btn.disabled = true;
+      if (status) {
+        status.textContent = '';
+        status.style.color = '';
+      }
+
+      try {
+        var response = await fetch('https://formsubmit.co/ajax/hello@efficiently.world', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            company: company,
+            interest: interest,
+            message: message,
+            _subject: subject,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Form delivery failed (' + response.status + ')');
+        }
+
+        form.reset();
+        if (status) {
+          status.textContent = 'Message sent. We will reply within 48 hours.';
+          status.style.color = 'var(--eff-accent)';
+        }
+        btn.textContent = 'Message Sent';
+      } catch (error) {
+        if (status) {
+          status.textContent = 'Sorry — something went wrong sending your message. Please try again in a moment.';
+          status.style.color = '#ff8a8a';
+        }
+        btn.textContent = 'Try Again';
+      } finally {
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+
       setTimeout(function () {
         btn.textContent = originalText;
-        btn.style.opacity = '1';
-      }, 3000);
+      }, 4000);
     });
   }
 

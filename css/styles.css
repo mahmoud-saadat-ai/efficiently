@@ -126,6 +126,7 @@ img {
 .eff-nav__logo-img {
   height: 38px;
   width: auto;
+  max-width: 220px;
   display: block;
 }
 
@@ -713,6 +714,7 @@ img {
 .eff-footer__logo {
   height: 42px;
   width: auto;
+  max-width: 230px;
   display: block;
   border-radius: 2px;
 }

@@ -955,3 +955,130 @@ img {
     flex-direction: column;
   }
 }
+
+/* ============================================
+   PAGE-SPECIFIC: Career eras (About)
+   ============================================ */
+
+.eff-era {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  gap: var(--eff-space-lg);
+  align-items: start;
+  padding: var(--eff-space-xl) 0;
+  border-top: 1px solid var(--eff-border-subtle);
+}
+
+.eff-era:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.eff-era:last-of-type {
+  padding-bottom: 0;
+}
+
+.eff-era__years {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--eff-accent);
+  margin-bottom: var(--eff-space-sm);
+}
+
+.eff-era__meta .eff-h3 {
+  margin-bottom: var(--eff-space-sm);
+}
+
+.eff-era__meta .eff-body {
+  margin-bottom: var(--eff-space-sm);
+}
+
+.eff-era__gallery {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.eff-era__gallery--2 {
+  grid-template-columns: 1fr;
+}
+
+.eff-era__gallery--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.eff-era__gallery--5 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.eff-era__gallery--5 .eff-era__shot:nth-child(1) { grid-column: span 2; }
+.eff-era__gallery--5 .eff-era__shot:nth-child(2) { grid-column: span 2; }
+.eff-era__gallery--5 .eff-era__shot:nth-child(3) { grid-column: span 2; }
+.eff-era__gallery--5 .eff-era__shot:nth-child(4) { grid-column: span 3; }
+.eff-era__gallery--5 .eff-era__shot:nth-child(5) { grid-column: span 3; }
+
+.eff-era__shot {
+  margin: 0;
+  overflow: hidden;
+  background: var(--eff-bg-card);
+  border: 1px solid var(--eff-border-subtle);
+}
+
+.eff-era__shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform var(--eff-transition-slow);
+}
+
+.eff-era:hover .eff-era__shot img {
+  transform: scale(1.02);
+}
+
+.eff-era__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eff-space-md);
+  justify-content: center;
+  padding: var(--eff-space-lg);
+  background: var(--eff-bg-card);
+  border: 1px solid var(--eff-border-subtle);
+  border-radius: var(--eff-radius-md);
+}
+
+.eff-era__panel-group .eff-h4 {
+  margin-bottom: 0.75rem;
+}
+
+.eff-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .eff-era {
+    grid-template-columns: 1fr;
+    gap: var(--eff-space-md);
+    padding: var(--eff-space-lg) 0;
+  }
+
+  .eff-era__gallery--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .eff-era__gallery--5 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .eff-era__gallery--5 .eff-era__shot:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  .eff-era__gallery--5 .eff-era__shot:nth-child(3) {
+    grid-column: span 2;
+  }
+}

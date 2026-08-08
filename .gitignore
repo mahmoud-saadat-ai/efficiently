@@ -1,0 +1,10 @@
+# Local-only materials (resume, decks, exports)
+data/
+
+# Temporary resume text extracts (regenerate locally if needed)
+_resume_plain.txt
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log

@@ -23,7 +23,7 @@ Efficiently backs and advises companies building real-world AI systems — robot
 
 - **Pure HTML/CSS/JS** — no frameworks, no build step
 - **GitHub Pages** for hosting
-- **Inter** (Google Fonts) for typography
+- **Plus Jakarta Sans** (Google Fonts) for typography
 - Responsive design with mobile-first breakpoints
 - Scroll-reveal animations via Intersection Observer
 

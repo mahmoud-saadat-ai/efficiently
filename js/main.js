@@ -139,7 +139,7 @@
 
         form.reset();
         if (status) {
-          status.textContent = 'Message sent. We will reply within 48 hours.';
+          status.textContent = 'Message sent. I will reply within two business days.';
           status.style.color = 'var(--eff-accent)';
         }
         btn.textContent = 'Message Sent';

@@ -1082,3 +1082,117 @@ img {
     grid-column: span 2;
   }
 }
+
+/* ============================================
+   STATEMENT COPY — short, stacked, high-conviction
+   ============================================ */
+
+.eff-statement > * + * {
+  margin-top: 0.85rem;
+}
+
+.eff-statement p {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--eff-text-secondary);
+}
+
+.eff-statement p strong {
+  color: var(--eff-white);
+  font-weight: 600;
+}
+
+.eff-signature {
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--eff-white);
+}
+
+.eff-signature em {
+  font-style: normal;
+  color: var(--eff-accent);
+}
+
+/* Short fragment stacks: "Architecture. Sensing. Compute." */
+.eff-frag {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--eff-text-secondary);
+}
+
+.eff-frag strong {
+  color: var(--eff-white);
+  font-weight: 600;
+}
+
+/* Role rows: ENGINEER — Make it work. */
+.eff-role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--eff-border-subtle);
+}
+
+.eff-role:last-child {
+  border-bottom: none;
+}
+
+.eff-role__label {
+  flex: 0 0 8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--eff-accent);
+}
+
+.eff-role__text {
+  font-size: 1.05rem;
+  color: var(--eff-text-primary);
+}
+
+/* Question callouts: "Are we building the right thing?" */
+.eff-question {
+  padding: 0.8rem 1rem 0.8rem 1.15rem;
+  border-left: 3px solid var(--eff-accent);
+  background: var(--eff-accent-glow);
+  border-radius: 0 var(--eff-radius-sm) var(--eff-radius-sm) 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--eff-text-primary);
+}
+
+.eff-question + .eff-question {
+  margin-top: 0.6rem;
+}
+
+/* Career path: Silicon → Vehicles → Autonomy → Radar → SDVs */
+.eff-path {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 0.85rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--eff-white);
+}
+
+.eff-path span:not(:last-child)::after {
+  content: '→';
+  margin-left: 0.85rem;
+  color: var(--eff-accent);
+}
+
+@media (max-width: 768px) {
+  .eff-statement p {
+    font-size: 1.05rem;
+  }
+
+  .eff-role__label {
+    flex: 0 0 100%;
+  }
+}
